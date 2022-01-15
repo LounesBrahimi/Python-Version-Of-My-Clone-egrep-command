@@ -7,6 +7,15 @@ def estSuiteConcatenations(regEx : str):
             return False
     return True
 
+# Ouvre le fichier avec le nom "fileName" passé en parametre, recupere
+# le texte dans le fichier et le retourne
+def fileToText(fileName : str):
+    f = open(fileName, "r")
+    return f.read()
+
+
 
 #print(estSuiteConcatenations("eB(oo)*k"))
 #print(estSuiteConcatenations("eBook"))
+print(fileToText("ebook1.txt"))
+
