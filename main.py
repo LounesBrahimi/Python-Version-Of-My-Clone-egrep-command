@@ -2,6 +2,8 @@
 
 import sys
 
+from KmpAlgorithm import KmpAlgorithm
+
 #Retourne vraie si l'expression reguliere est reduite à une suite de concatenations
 def estSuiteConcatenations(regEx : str):
     for i in range(len(regEx)):
@@ -37,6 +39,8 @@ def main():
             print("=========Recherche avec KMP=========")
             regEx : str = sys.argv[1]
             text : str = fileToText(sys.argv[2])
+            kmp = KmpAlgorithm(regEx, text)
+            kmp.generateFunctor()
             # to continue
         else:
             print("=========Recherche avec automate=========")
