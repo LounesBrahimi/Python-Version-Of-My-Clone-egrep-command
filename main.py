@@ -3,6 +3,8 @@
 import sys
 
 from KmpAlgorithm import KmpAlgorithm
+from RegEx import RegEx
+from SyntaxTree import SyntaxTree
 
 #Retourne vraie si l'expression reguliere est reduite à une suite de concatenations
 def estSuiteConcatenations(regEx : str):
@@ -46,6 +48,9 @@ def main():
         else:
             print("=========Recherche avec automate=========")
             regEx : str = sys.argv[1]
-            # to conitnue
+            r = RegEx(regEx)
+            # Conversion de l'expression réguliere en arbre syntaxique
+            ret: SyntaxTree = r.parse1()
+            print(ret.toString())
 
 main()
