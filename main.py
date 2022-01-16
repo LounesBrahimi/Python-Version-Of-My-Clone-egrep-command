@@ -41,7 +41,8 @@ def main():
             text : str = fileToText(sys.argv[2])
             kmp = KmpAlgorithm(regEx, text)
             kmp.generateFunctor()
-            # to continue
+            kmp.generateCarryOver()
+            printLignes(kmp.search())
         else:
             print("=========Recherche avec automate=========")
             regEx : str = sys.argv[1]
